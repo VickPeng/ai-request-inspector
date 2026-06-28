@@ -91,4 +91,10 @@ ai-request-inspector/
 
 ## Portfolio
 
-Take screenshots of the Dashboard, Logs, and Models pages to showcase full-stack development skills on your portfolio.
+### Screenshots
+
+| Dashboard | Request Logs | Model Comparison |
+|:---:|:---:|:---:|
+| ![Dashboard](screenshots/dashboard.png) | ![Logs](screenshots/logs.png) | ![Models](screenshots/models.png) |
+
+Take these screenshots to showcase full-stack development skills on your portfolio — or deploy the demo live and link the URL directly.
