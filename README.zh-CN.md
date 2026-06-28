@@ -91,4 +91,10 @@ ai-request-inspector/
 
 ## 作品集展示
 
+### 截图
+
+| 仪表盘 | 请求日志 | 模型对比 |
+|:---:|:---:|:---:|
+| ![仪表盘](screenshots/dashboard-zh.png) | ![请求日志](screenshots/logs-zh.png) | ![模型对比](screenshots/models-zh.png) |
+
 截取仪表盘、日志页和模型页截图，作为全栈开发能力的作品集素材。
