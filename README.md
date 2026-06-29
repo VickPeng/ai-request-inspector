@@ -23,19 +23,6 @@ A full-stack demo dashboard for monitoring and analyzing AI API request metrics.
 
 ## Getting Started
 
-### Backend
-
-```bash
-cd backend
-pip install -r requirements.txt
-python main.py
-```
-
-The server starts at `http://localhost:8000` and auto-seeds 500 records.  
-API docs available at `http://localhost:8000/docs`.
-
-### Frontend
-
 ```bash
 cd frontend
 npm install
@@ -44,11 +31,7 @@ npm run dev
 
 Open `http://localhost:3000` — the app auto-redirects to `/dashboard`.
 
-If the backend runs on a different port, create `frontend/.env.local`:
-
-```
-NEXT_PUBLIC_API_BASE=http://localhost:8001
-```
+The API routes (`/api/summary`, `/api/logs`, `/api/models`) are built into Next.js — no separate backend needed.
 
 ## API Endpoints
 
@@ -62,39 +45,37 @@ NEXT_PUBLIC_API_BASE=http://localhost:8001
 
 ```
 ai-request-inspector/
-├── backend/
-│   ├── main.py              # FastAPI app + 3 API endpoints
-│   ├── database.py          # SQLite schema + seed data (500 records)
-│   └── requirements.txt
 ├── frontend/
 │   └── src/
 │       ├── app/
-│       │   ├── layout.tsx           # Root layout + providers
-│       │   ├── dashboard/page.tsx   # KPI cards + area/bar charts
-│       │   ├── logs/page.tsx        # Paginated table + filters
-│       │   └── models/page.tsx      # Model cards + radar/bar charts
+│       │   ├── api/
+│       │   │   ├── summary/route.ts   # GET /api/summary
+│       │   │   ├── logs/route.ts      # GET /api/logs
+│       │   │   └── models/route.ts    # GET /api/models
+│       │   ├── layout.tsx             # Root layout + providers
+│       │   ├── dashboard/page.tsx     # KPI cards + area/bar charts
+│       │   ├── logs/page.tsx          # Paginated table + filters
+│       │   └── models/page.tsx        # Model cards + radar/bar charts
 │       ├── components/
-│       │   ├── sidebar.tsx          # Navigation + theme/lang toggles
-│       │   ├── theme-provider.tsx   # Dark/light theme context
-│       │   ├── provider-logo.tsx    # Brand logo component
-│       │   ├── back-to-top.tsx      # Scroll-to-top button
-│       │   └── ui/                  # shadcn/ui components
+│       │   ├── sidebar.tsx            # Navigation + theme/lang toggles
+│       │   ├── theme-provider.tsx     # Dark/light theme context
+│       │   ├── provider-logo.tsx      # Brand logo component
+│       │   ├── back-to-top.tsx        # Scroll-to-top button
+│       │   └── ui/                    # shadcn/ui components
 │       ├── lib/
-│       │   ├── api.ts               # API client
-│       │   ├── i18n.ts              # EN/ZH dictionary
-│       │   └── i18n-context.tsx     # Multi-language provider
+│       │   ├── api.ts                 # API client
+│       │   ├── seed-data.ts           # 500 simulated records
+│       │   ├── i18n.ts                # EN/ZH dictionary
+│       │   └── i18n-context.tsx       # Multi-language provider
 │       └── ...
-├── README.md                        # English
-├── README.zh-CN.md                  # 中文
-└── public/logos/                    # Brand SVG logos
+├── README.md                          # English
+├── README.zh-CN.md                    # 中文
+├── screenshots/                       # Demo screenshots
+└── public/logos/                      # Brand SVG logos
 ```
 
-## Portfolio
-
-### Screenshots
+## Screenshots
 
 | Dashboard | Request Logs | Model Comparison |
 |:---:|:---:|:---:|
 | ![Dashboard](screenshots/dashboard.png) | ![Logs](screenshots/logs.png) | ![Models](screenshots/models.png) |
-
-Take these screenshots to showcase full-stack development skills on your portfolio — or deploy the demo live and link the URL directly.
