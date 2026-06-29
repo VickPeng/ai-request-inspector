@@ -6,11 +6,9 @@ A full-stack demo dashboard for monitoring and analyzing AI API request metrics.
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | Next.js 16 (App Router), TypeScript, Tailwind CSS, shadcn/ui |
+| Frontend | Next.js 16 (App Router, API Routes), TypeScript, Tailwind CSS, shadcn/ui |
 | Charts | Recharts (area, bar, radar) |
-| Backend | FastAPI (Python) |
-| Database | SQLite |
-| Data | 500 simulated records across 6 AI models |
+| Database | In-memory (500 simulated records) |
 
 ## Features
 

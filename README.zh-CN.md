@@ -6,11 +6,9 @@
 
 | 层 | 技术 |
 |----|------|
-| 前端 | Next.js 16 (App Router), TypeScript, Tailwind CSS, shadcn/ui |
+| 前端 | Next.js 16 (App Router, API Routes), TypeScript, Tailwind CSS, shadcn/ui |
 | 图表 | Recharts（面积图、柱状图、雷达图） |
-| 后端 | FastAPI (Python) |
-| 数据库 | SQLite |
-| 数据 | 500 条模拟记录，覆盖 6 个 AI 模型 |
+| 数据库 | 内存内（500 条模拟记录） |
 
 ## 功能
 
