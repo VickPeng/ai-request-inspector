@@ -23,6 +23,12 @@
 
 ## 启动方式
 
+### 在线 Demo
+
+[https://ai-request-inspector.vercel.app](https://ai-request-inspector.vercel.app)
+
+### 本地运行
+
 ```bash
 cd frontend
 npm install

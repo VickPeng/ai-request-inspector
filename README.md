@@ -23,6 +23,12 @@ A full-stack demo dashboard for monitoring and analyzing AI API request metrics.
 
 ## Getting Started
 
+### Live Demo
+
+[https://ai-request-inspector.vercel.app](https://ai-request-inspector.vercel.app)
+
+### Local Development
+
 ```bash
 cd frontend
 npm install
