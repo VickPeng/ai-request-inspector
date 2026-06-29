@@ -127,7 +127,7 @@ export default function LogsPage() {
       </div>
 
       {/* Table */}
-      <Card>
+      <Card className="shadow-card">
         <CardContent className="p-0">
           <Table>
             <TableHeader>

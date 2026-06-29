@@ -87,7 +87,7 @@ export default function ModelsPage() {
               ? "text-yellow-500"
               : "text-red-500";
           return (
-            <Card key={m.model} className="overflow-hidden">
+            <Card key={m.model} className="overflow-hidden shadow-card card-hover">
               <CardContent className="pt-4 space-y-3">
                 {/* Header with logo */}
                 <div className="flex items-center gap-3">
@@ -159,7 +159,7 @@ export default function ModelsPage() {
       </div>
 
       {/* Radar chart */}
-      <Card>
+      <Card className="shadow-card">
         <CardHeader>
           <CardTitle className="text-base">
             {t("models.radar_chart")}
@@ -208,7 +208,7 @@ export default function ModelsPage() {
       </Card>
 
       {/* Latency comparison bar */}
-      <Card>
+      <Card className="shadow-card">
         <CardHeader>
           <CardTitle className="text-base">
             {t("models.latency_chart")}

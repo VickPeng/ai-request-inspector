@@ -42,7 +42,7 @@ function StatCard({
   subtitle?: string;
 }) {
   return (
-    <Card>
+    <Card className="shadow-card">
       <CardHeader className="flex flex-row items-center justify-between pb-2">
         <CardTitle className="text-sm font-medium text-muted-foreground">
           {title}
@@ -153,7 +153,7 @@ export default function DashboardPage() {
 
       {/* Charts row */}
       <div className="grid gap-6 lg:grid-cols-2">
-        <Card>
+        <Card className="shadow-card">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <div>
               <CardTitle className="text-base">
@@ -228,7 +228,7 @@ export default function DashboardPage() {
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className="shadow-card">
           <CardHeader>
             <CardTitle className="text-base">
               {t("dashboard.model_chart")}
@@ -273,7 +273,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Recent requests */}
-      <Card>
+      <Card className="shadow-card">
         <CardHeader>
           <CardTitle className="text-base">{t("dashboard.recent")}</CardTitle>
         </CardHeader>

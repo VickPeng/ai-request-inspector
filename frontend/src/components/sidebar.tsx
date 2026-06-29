@@ -27,15 +27,17 @@ export function Sidebar() {
   const { t, lang, setLang } = useTranslation();
 
   return (
-    <aside className="fixed left-0 top-0 z-40 h-screen w-56 border-r bg-background flex flex-col">
+    <aside className="fixed left-0 top-0 z-40 h-screen w-56 border-r bg-sidebar flex flex-col">
       {/* Header */}
-      <div className="flex items-center gap-2 px-6 pt-6 pb-4">
-        <Server className="h-5 w-5 text-primary" />
-        <span className="font-semibold text-sm">{t("app.title")}</span>
+      <div className="flex items-center gap-2.5 px-5 pt-6 pb-5">
+        <div className="h-7 w-7 rounded-md bg-sidebar-primary flex items-center justify-center">
+          <Server className="h-4 w-4 text-sidebar-primary-foreground" />
+        </div>
+        <span className="font-semibold text-sm tracking-tight">{t("app.title")}</span>
       </div>
 
       {/* Nav */}
-      <nav className="flex flex-col gap-1 px-3 flex-1">
+      <nav className="flex flex-col gap-0.5 px-3 flex-1">
         {navItems.map((item) => {
           const active = pathname.startsWith(item.href);
           return (
@@ -43,13 +45,13 @@ export function Sidebar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors",
+                "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-all",
                 active
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  ? "bg-sidebar-accent text-sidebar-accent-foreground"
+                  : "text-muted-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-foreground"
               )}
             >
-              <item.icon className="h-4 w-4" />
+              <item.icon className={cn("h-4 w-4", active && "text-sidebar-primary")} />
               {t(item.label as any)}
             </Link>
           );
@@ -57,11 +59,11 @@ export function Sidebar() {
       </nav>
 
       {/* Bottom: toggles */}
-      <div className="px-3 pb-4 flex flex-col gap-2 border-t pt-4">
+      <div className="px-3 pb-4 flex flex-col gap-1.5 border-t border-sidebar-border pt-4">
         {/* Theme toggle */}
         <button
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+          className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-sidebar-accent/50 hover:text-sidebar-foreground transition-all"
         >
           {theme === "dark" ? (
             <Sun className="h-4 w-4" />
@@ -72,7 +74,7 @@ export function Sidebar() {
         </button>
 
         {/* Lang toggle */}
-        <div className="flex rounded-lg border overflow-hidden">
+        <div className="flex rounded-md border border-sidebar-border overflow-hidden">
           {(["en", "zh"] as Lang[]).map((l) => (
             <button
               key={l}
@@ -80,8 +82,8 @@ export function Sidebar() {
               className={cn(
                 "flex-1 px-3 py-2 text-xs font-medium transition-colors",
                 lang === l
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:bg-muted"
+                  ? "bg-sidebar-primary text-sidebar-primary-foreground"
+                  : "text-muted-foreground hover:bg-sidebar-accent/50"
               )}
             >
               {t(l === "en" ? "lang.en" : "lang.zh")}
